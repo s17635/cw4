@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using cw3.Models;
+using cw4.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.SqlClient;
+using cw4.DAL;
 
 namespace cw3.Controllers
 {
@@ -19,10 +21,23 @@ namespace cw3.Controllers
          * HttpDelete - usuń zasób
          */
 
-        [HttpGet]
-        public string GetStudents([FromQuery] string orderBy)
+        private readonly IStudentDbService studentDbService;
+
+        public StudentsController(IStudentDbService studentDbService)
         {
-            return $"Kowalski,Malewski,Andrzejewski - sortowanie {orderBy}";
+            this.studentDbService = studentDbService;
+        }
+
+        [HttpGet]
+        public IActionResult GetStudents([FromQuery] string orderBy)
+        {
+            return Ok(studentDbService.GetStudents());
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetStudentEnrollments([FromRoute] string id)
+        {
+            return Ok(studentDbService.GetStudentEnrollments(id));
         }
 
         [HttpPost]
@@ -43,17 +58,6 @@ namespace cw3.Controllers
         public IActionResult DeleteStudent([FromRoute] int id)
         {
             return Ok("Usuwanie ukończone");
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult GetStudentById([FromRoute] int id)
-        {
-            if (id == 1)
-                return Ok("Kowalski");
-            else if (id == 2)
-                return Ok("Malewski");
-            else
-                return NotFound("Nie znaleziono studenta");
         }
     }
 }
