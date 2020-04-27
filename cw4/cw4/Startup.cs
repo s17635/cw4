@@ -27,6 +27,7 @@ namespace cw4
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IStudentDbService, StudentDbService>();
+            services.AddScoped<IEnrollmentDbService, EnrollmentDbService>();
             services.AddControllers();
         }
 

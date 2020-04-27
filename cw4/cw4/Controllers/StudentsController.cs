@@ -43,7 +43,7 @@ namespace cw3.Controllers
         [HttpPost]
         public IActionResult AddStudent([FromBody] Student student)
         {
-            // add to db, generating index numberfgfg
+            // add to db, generating index number
             student.IndexNumber = $"s{new Random().Next(1, 20000)}";
             return Ok(student);
         }
