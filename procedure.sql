@@ -3,6 +3,7 @@ CREATE PROCEDURE PromoteStudents
 @Semester INT
 AS
 BEGIN
+	SET XACT_ABORT ON;
 	DECLARE @nextSemester INT;
 	SET @nextSemester = @Semester +1 ;
 	DECLARE @oldIdEnroll INT;
@@ -19,4 +20,7 @@ BEGIN
 	END
 	
 	UPDATE Student SET IdEnrollment = @newIdEnroll WHERE IdEnrollment = @oldIdEnroll;
+
+	SELECT * FROM Enrollment WHERE IdEnrollment=@newIdEnroll
+	RETURN
 END
