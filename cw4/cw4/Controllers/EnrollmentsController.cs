@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using cw4.DAL;
 using cw4.Other;
+using cw4.DTOs.Requests;
 
 namespace cw3.Controllers
 {
@@ -41,6 +42,20 @@ namespace cw3.Controllers
                 Studies = student.Studies
             };
             EnrollResult result = enrollmentDbService.AddAndEnrollStudent(response);
+            if (result.Code == 201)
+            {
+                return StatusCode(result.Code, result.Enrollment);
+            }
+            else
+            {
+                return StatusCode(result.Code, result.Message);
+            }
+        }
+
+        [HttpPost("promotions")]
+        public IActionResult test([FromBody] PromoteStudentRequest request)
+        {
+            EnrollResult result = enrollmentDbService.PromoteStudent(request);
             if (result.Code == 201)
             {
                 return StatusCode(result.Code, result.Enrollment);

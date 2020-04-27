@@ -1,4 +1,5 @@
-﻿using cw4.Models;
+﻿using cw4.DTOs.Requests;
+using cw4.Models;
 using cw4.Other;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace cw4.DAL
     public interface IEnrollmentDbService
     {
         public EnrollResult AddAndEnrollStudent(EnrollStudentResponse enrollStudentResponse);
+        public EnrollResult PromoteStudent(PromoteStudentRequest request);
     }
 }

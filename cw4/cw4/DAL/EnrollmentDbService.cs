@@ -1,4 +1,5 @@
-﻿using cw4.Models;
+﻿using cw4.DTOs.Requests;
+using cw4.Models;
 using cw4.Other;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,8 +13,6 @@ namespace cw4.DAL
     public class EnrollmentDbService : IEnrollmentDbService
     {
         private string SqlConn = "Data Source=db-mssql;Initial Catalog=s17635;Integrated Security=True";
-
-
 
         public EnrollResult AddAndEnrollStudent(EnrollStudentResponse enrollStudentResponse)
         {
@@ -121,7 +120,7 @@ namespace cw4.DAL
                             command.Parameters.AddWithValue("idEnrollment2", idEnrollment);
                             command.ExecuteNonQuery();
 
-           
+
                             dr.Close();
                             tran.Commit();
 
@@ -141,6 +140,57 @@ namespace cw4.DAL
                     {
                         Code = 500,
                         Message = "SQL Exception"
+                    };
+                }
+            }
+        }
+
+        public EnrollResult PromoteStudent(PromoteStudentRequest request)
+        {
+            using (var client = new SqlConnection(SqlConn))
+            {
+                using (var command = new SqlCommand())
+                {
+                    Enrollment result = null;
+                    command.Connection = client;
+                    client.Open();
+
+                    command.CommandText = "SELECT IdEnrollment FROM Enrollment e INNER JOIN Studies s ON e.IdStudy = s.IdStudy WHERE s.Name=@studyName AND Semester=@sem";
+                    command.Parameters.AddWithValue("studyName", request.Studies);
+                    command.Parameters.AddWithValue("sem", request.Semester);
+                    var dr = command.ExecuteReader();
+                    if(!dr.Read())
+                    {
+                        return new EnrollResult
+                        {
+                            Code = 404,
+                            Message = "W tabeli Enrollment nie istnieje wpis o podanych wartościach"
+                        };
+                    }
+                    dr.Close();
+
+                    command.CommandText = "PromoteStudents";
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("Studies", request.Studies);
+                    command.Parameters.AddWithValue("Semester", request.Semester);
+                    dr = command.ExecuteReader();
+
+                    if(dr.Read())
+                    {
+                        result = new Enrollment
+                        {
+                            IdEnrollment = (int)dr["IdEnrollment"],
+                            Semester = (int)dr["Semester"],
+                            IdStudy = (int)dr["IdStudy"],
+                            StartDate = (DateTime)dr["StartDate"]
+                        };
+                    }
+
+                    return new EnrollResult
+                    {
+                        Code = 201,
+                        Enrollment = result
                     };
                 }
             }
