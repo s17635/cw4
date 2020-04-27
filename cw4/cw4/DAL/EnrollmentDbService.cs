@@ -32,6 +32,7 @@ namespace cw4.DAL
                         command.CommandText = "SELECT IdStudy FROM Studies WHERE name=@name";
                         command.Parameters.AddWithValue("name", enrollStudentResponse.Studies);
                         command.Transaction = tran;
+                        Enrollment resultEnrollment;
 
                         var dr = command.ExecuteReader();
                         if (!dr.Read())
@@ -48,33 +49,88 @@ namespace cw4.DAL
                         {
                             int idStudy = (int)dr["IdStudy"];
                             int semester = 1;
-                            command.CommandText = "SELECT IdEnrollment FROM Enrollment WHERE IdStudy=@idStudy AND Semester=@semester";
+                            int idEnrollment = -1;
+                            command.CommandText = "SELECT * FROM Enrollment WHERE IdStudy=@idStudy AND Semester=@semester";
                             command.Parameters.AddWithValue("idStudy", idStudy);
                             command.Parameters.AddWithValue("semester", semester);
                             dr.Close();
                             dr = command.ExecuteReader();
                             if (!dr.Read())
                             {
-                                command.CommandText = "INSERT INTO Enrollment(IdEnrollment,Semester,IdStudy,StartDate) VALUES (10,@semester,@idStudy,@date)";
-                                command.Parameters.AddWithValue("idStudy", idStudy);
-                                command.Parameters.AddWithValue("semester", semester);
-                                command.Parameters.AddWithValue("date", DateTime.Now);
-                                //dr.Close();
-                                command.ExecuteNonQuery();
-                                return new EnrollResult
+                                dr.Close();
+                                command.CommandText = "SELECT Max(IdEnrollment) as max from Enrollment";
+                                int maxIdEnrollment = -1;
+                                dr = command.ExecuteReader();
+                                if (dr.Read())
                                 {
-                                    Code = 200,
-                                    Message = "test"
+                                    maxIdEnrollment = (int)dr["max"];
+                                    maxIdEnrollment++;
+                                    idEnrollment = maxIdEnrollment;
+                                }
+
+                                dr.Close();
+                                DateTime now = DateTime.Now;
+                                command.CommandText = "INSERT INTO Enrollment(IdEnrollment,Semester,IdStudy,StartDate) VALUES (@idEnrollment,@semester2,@idStudy2,@date)";
+                                command.Parameters.AddWithValue("idEnrollment", idEnrollment);
+                                command.Parameters.AddWithValue("semester2", semester);
+                                command.Parameters.AddWithValue("idStudy2", idStudy);
+                                command.Parameters.AddWithValue("date", now);
+                                command.ExecuteNonQuery();
+
+                                resultEnrollment = new Enrollment
+                                {
+                                    IdEnrollment = idEnrollment,
+                                    Semester = semester,
+                                    IdStudy = idStudy,
+                                    StartDate = now
+                                };
+                            }
+                            else
+                            {
+                                idEnrollment = (int)dr["IdEnrollment"];
+                                resultEnrollment = new Enrollment
+                                {
+                                    IdEnrollment = idEnrollment,
+                                    Semester = (int)dr["Semester"],
+                                    IdStudy = (int)dr["IdStudy"],
+                                    StartDate = (DateTime)dr["StartDate"]
                                 };
                             }
 
                             dr.Close();
+                            command.CommandText = "SELECT IndexNumber FROM Student WHERE IndexNumber=@indexNumber";
+                            command.Parameters.AddWithValue("indexNumber", enrollStudentResponse.IndexNumber);
+                            dr = command.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                dr.Close();
+                                tran.Rollback();
+                                return new EnrollResult
+                                {
+                                    Code = 400,
+                                    Message = "Student with this index number is already present in the Database"
+                                };
+                            }
+
+                            dr.Close();
+                            command.CommandText = "INSERT INTO Student(IndexNumber,FirstName,LastName,BirthDate,IdEnrollment) VALUES (@indexNumber2,@firstName,@lastName,@birthDate,@idEnrollment2)";
+                            command.Parameters.AddWithValue("indexNumber2", enrollStudentResponse.IndexNumber);
+                            command.Parameters.AddWithValue("firstName", enrollStudentResponse.FirstName);
+                            command.Parameters.AddWithValue("lastName", enrollStudentResponse.LastName);
+                            command.Parameters.AddWithValue("birthDate", enrollStudentResponse.BirthDate);
+                            command.Parameters.AddWithValue("idEnrollment2", idEnrollment);
+                            command.ExecuteNonQuery();
+
+           
+                            dr.Close();
                             tran.Commit();
+
                         }
                         return new EnrollResult
                         {
-                            Code = 200,
-                            Message = "Ok"
+                            Code = 201,
+                            Message = "Ok",
+                            Enrollment = resultEnrollment
                         };
                     }
                     catch (SqlException)
@@ -84,7 +140,7 @@ namespace cw4.DAL
                     return new EnrollResult
                     {
                         Code = 500,
-                        Message = "test exception"
+                        Message = "SQL Exception"
                     };
                 }
             }

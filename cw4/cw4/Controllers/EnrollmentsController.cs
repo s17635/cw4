@@ -37,11 +37,18 @@ namespace cw3.Controllers
                 IndexNumber = student.IndexNumber,
                 FirstName = student.FirstName,
                 LastName = student.LastName,
-                BirthDate = DateTime.Today, //TODO
+                BirthDate = DateTime.Parse(student.BirthDate),
                 Studies = student.Studies
             };
             EnrollResult result = enrollmentDbService.AddAndEnrollStudent(response);
-            return StatusCode(result.Code, result.Message);
+            if (result.Code == 201)
+            {
+                return StatusCode(result.Code, result.Enrollment);
+            }
+            else
+            {
+                return StatusCode(result.Code, result.Message);
+            }
         }
 
 
