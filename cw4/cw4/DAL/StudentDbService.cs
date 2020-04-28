@@ -70,5 +70,22 @@ namespace cw4.DAL
 
             return output;
         }
+
+        public bool CheckIndex(string index)
+        {
+            using (var client = new SqlConnection(SqlConn))
+            {
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = client;
+                    command.CommandText = "SELECT IndexNumber FROM Student WHERE IndexNumber=@indexNumber";
+                    command.Parameters.AddWithValue("indexNumber", index);
+                    client.Open();
+
+                    var dr = command.ExecuteReader();
+                    return dr.Read();
+                }
+            }
+        }
     }
 }

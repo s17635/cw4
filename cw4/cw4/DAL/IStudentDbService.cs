@@ -11,5 +11,6 @@ namespace cw4.DAL
     {
         IEnumerable<Student> GetStudents();
         IEnumerable<Enrollment> GetStudentEnrollments(string idStudent);
+        bool CheckIndex(string index);
     }
 }

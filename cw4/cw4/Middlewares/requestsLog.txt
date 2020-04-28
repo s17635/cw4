@@ -1,0 +1,39 @@
+
+New request 28.04.2020 12:37:05
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 28.04.2020 12:37:05
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 28.04.2020 12:37:18
+HTTP GET /api/students
+Query: null
+Body: null
+
+New request 28.04.2020 12:37:49
+HTTP POST /api/students
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 28.04.2020 12:38:04
+HTTP POST /api/students
+Query: ?LastName=Malewski
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 28.04.2020 12:38:22
+HTTP POST /api/students
+Query: ?LastName=Malewski
+Body: 
+{
+	"Index":"s17635"
+}
