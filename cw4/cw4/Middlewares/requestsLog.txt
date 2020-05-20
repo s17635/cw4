@@ -37,3 +37,1026 @@ Body:
 {
 	"Index":"s17635"
 }
+
+New request 20.05.2020 18:56:40
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 18:56:40
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 18:57:03
+HTTP POST /api/students
+Query: ?LastName=Malewski
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 18:58:07
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:00:30
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:00:31
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:01:34
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:01:52
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:05:13
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:16:53
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:16:53
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:17:03
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:18:06
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:20:17
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:20:17
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:20:20
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:20:37
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:20:37
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:20:40
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:21:05
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:21:05
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:21:08
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:21:23
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:21:24
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:21:26
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:21:28
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:21:47
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:21:47
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:21:50
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:22:37
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:22:37
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:22:39
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:22:59
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:23:00
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:23:02
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:23:22
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:23:22
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:23:24
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Index":"s17635"
+}
+
+New request 20.05.2020 19:25:16
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:25:17
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:25:38
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"IndexNumber":"s17635"
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:25:49
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"IndexNumber":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:28:21
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"IndexNumber":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:29:05
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:29:05
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:29:07
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"IndexNumber":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:29:26
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:29:26
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:29:29
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"IndexNumber":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:29:39
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"IndexNumber":"s17635"
+}
+
+New request 20.05.2020 19:30:27
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s17635"
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:30:31
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:31:02
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:31:12
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:31:28
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"Password" : "eluwrina"
+}
+
+New request 20.05.2020 19:31:33
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:31:35
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s176355",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:31:46
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s16660",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:31:52
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:32:29
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:32:35
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:32:36
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:32:37
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:33:34
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:33:34
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:33:48
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:33:50
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:36:10
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:36:10
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:36:20
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:36:28
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:38:01
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 19:38:02
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 19:38:06
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 19:38:15
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:38:18
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:38:20
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:38:24
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:38:25
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:38:29
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:38:37
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 19:38:38
+HTTP POST /api/enrollments
+Query: null
+Body: 
+{
+	"IndexNumber": "s176315",
+	"FirstName": "Andrzej",
+	"LastName": "Malewski",
+	"BirthDate": "30.03.1993",
+	"Studies": "IT"
+}
+
+New request 20.05.2020 20:16:33
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 20:16:33
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 20:16:43
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 20:17:07
+HTTP POST /api/students/refresh-token
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"Password" : "eluwina"
+}
+
+New request 20.05.2020 20:17:31
+HTTP POST /api/students/refresh-token
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"RefreshToken" : "1cfc78b2-9497-49c3-a92c-f1a6333dc05e"
+}
+
+New request 20.05.2020 20:17:37
+HTTP POST /api/students/refresh-token
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"RefreshToken" : "1cfc78b2-9497-49c3-a92c-f1a6333dc05e"
+}
+
+New request 20.05.2020 20:17:41
+HTTP POST /api/students/refresh-token
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"RefreshToken" : "a41e0722-60f8-4a21-9473-998c98ef32db"
+}
+
+New request 20.05.2020 20:17:48
+HTTP POST /api/students/refresh-token
+Query: null
+Body: 
+{
+	"Login":"s17635",
+	"RefreshToken" : "a30d9a03-71d5-40c1-9e5c-e72a3252cb1a"
+}
+
+New request 20.05.2020 21:03:22
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 21:03:22
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 21:05:13
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"IndexNumber":"s17635",
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:12:03
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 21:12:03
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 21:12:12
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:12:36
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:14:13
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:14:24
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 21:14:25
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 21:14:29
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:15:34
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:15:58
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 21:15:59
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 21:16:02
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:16:23
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 21:16:23
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 21:16:27
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:17:18
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 21:17:18
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 21:17:37
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"IdEnrollment":"1"
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:17:42
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"IdEnrollment":"1"
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:17:48
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"IdEnrollment":"1",
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:18:03
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Stachurski",
+	"BirthDate":"2015-01-01",
+	"IdEnrollment":1,
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:18:34
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Staszcak",
+	"BirthDate":"2015-01-01",
+	"IdEnrollment":1,
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:30:11
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 21:30:11
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 21:30:15
+HTTP POST /api/students/
+Query: null
+Body: 
+{
+	"FirstName":"Jacek",
+	"LastName":"Staszcak",
+	"BirthDate":"2015-01-01",
+	"IdEnrollment":1,
+	"Password":"test123"
+}
+
+New request 20.05.2020 21:30:59
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s2039",
+	"Password" : "test123"
+}
+
+New request 20.05.2020 21:31:19
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s2037",
+	"Password" : "test123"
+}
+
+New request 20.05.2020 21:31:35
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s2038",
+	"Password" : "test123"
+}
+
+New request 20.05.2020 21:31:36
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s2038",
+	"Password" : "test123"
+}
+
+New request 20.05.2020 21:31:40
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s2039",
+	"Password" : "test123"
+}
+
+New request 20.05.2020 21:31:42
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s2039",
+	"Password" : "test1123"
+}
+
+New request 20.05.2020 21:32:20
+HTTP GET /weatherforecast
+Query: null
+Body: null
+
+New request 20.05.2020 21:32:21
+HTTP GET /favicon.ico
+Query: null
+Body: null
+
+New request 20.05.2020 21:32:24
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s2039",
+	"Password" : "test1123"
+}
+
+New request 20.05.2020 21:32:28
+HTTP POST /api/students/login
+Query: null
+Body: 
+{
+	"Login":"s2039",
+	"Password" : "test123"
+}

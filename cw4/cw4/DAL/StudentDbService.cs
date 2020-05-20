@@ -1,4 +1,5 @@
 ﻿using cw4.Models;
+using cw4.Other;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,7 +14,7 @@ namespace cw4.DAL
         public IEnumerable<Student> GetStudents()
         {
             var output = new List<Student>();
-            using(var client = new SqlConnection(SqlConn))
+            using (var client = new SqlConnection(SqlConn))
             {
                 using (var command = new SqlCommand())
                 {
@@ -23,7 +24,7 @@ namespace cw4.DAL
                     client.Open();
                     var dr = command.ExecuteReader();
 
-                    while(dr.Read())
+                    while (dr.Read())
                     {
                         output.Add(new Student
                         {
@@ -78,12 +79,94 @@ namespace cw4.DAL
                 using (var command = new SqlCommand())
                 {
                     command.Connection = client;
+                    client.Open();
                     command.CommandText = "SELECT IndexNumber FROM Student WHERE IndexNumber=@indexNumber";
                     command.Parameters.AddWithValue("indexNumber", index);
-                    client.Open();
 
                     var dr = command.ExecuteReader();
                     return dr.Read();
+                }
+            }
+        }
+        public bool CheckLoginAndPassword(string login, string password)
+        {
+            using (var client = new SqlConnection(SqlConn))
+            {
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = client;
+                    client.Open();
+                    command.CommandText = "SELECT IndexNumber,Password,Salt FROM Student WHERE IndexNumber=@indexNumber";
+                    command.Parameters.AddWithValue("indexNumber", login);
+
+                    var dr = command.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        string indexNumberDB = (string)dr["IndexNumber"];
+                        string passwordDB = (string)dr["Password"];
+                        string saltDB = (string)dr["Salt"];
+
+                        return PasswordHasher.Validate(password, saltDB, passwordDB);
+                    }
+                    else
+                        return false;
+                }
+            }
+        }
+
+        public bool CheckLoginAndRefreshToken(string login, string refToken)
+        {
+            using (var client = new SqlConnection(SqlConn))
+            {
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = client;
+                    client.Open();
+                    command.CommandText = "SELECT IndexNumber,RefreshToken FROM Student WHERE IndexNumber=@indexNumber AND RefreshToken=@refreshToken";
+                    command.Parameters.AddWithValue("indexNumber", login);
+                    command.Parameters.AddWithValue("refreshToken", refToken);
+
+                    var dr = command.ExecuteReader();
+                    return dr.Read();
+                }
+            }
+        }
+
+        public void SetRefreshToken(string login, string refToken)
+        {
+            using (var client = new SqlConnection(SqlConn))
+            {
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = client;
+                    client.Open();
+                    command.CommandText = "UPDATE Student SET RefreshToken=@refreshToken WHERE IndexNumber=@indexNumber";
+                    command.Parameters.AddWithValue("indexNumber", login);
+                    command.Parameters.AddWithValue("refreshToken", refToken);
+
+                    var dr = command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void AddStudent(Student student)
+        {
+            using (var client = new SqlConnection(SqlConn))
+            {
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = client;
+                    client.Open();
+                    command.CommandText = "INSERT INTO Student(IndexNumber,FirstName,LastName,BirthDate,IdEnrollment,Password,Salt) VALUES (@indexNumber,@firstName,@lastName,@birthDate,@idEnrollment,@password,@salt)";
+                    command.Parameters.AddWithValue("indexNumber", student.IndexNumber);
+                    command.Parameters.AddWithValue("firstName", student.FirstName);
+                    command.Parameters.AddWithValue("lastName", student.LastName);
+                    command.Parameters.AddWithValue("birthDate", student.BirthDate);
+                    command.Parameters.AddWithValue("idEnrollment", student.IdEnrollment);
+                    command.Parameters.AddWithValue("password", student.Password);
+                    command.Parameters.AddWithValue("salt", student.Salt);
+
+                    var dr = command.ExecuteNonQuery();
                 }
             }
         }

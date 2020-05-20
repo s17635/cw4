@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using cw4.DAL;
 using cw4.Other;
 using cw4.DTOs.Requests;
+using Microsoft.AspNetCore.Authorization;
 
 namespace cw3.Controllers
 {
@@ -31,6 +32,7 @@ namespace cw3.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "employee")]
         public IActionResult EnrollStudent([FromBody] EnrollStudentRequest student)
         {
             EnrollStudentResponse response = new EnrollStudentResponse
@@ -53,7 +55,8 @@ namespace cw3.Controllers
         }
 
         [HttpPost("promotions")]
-        public IActionResult test([FromBody] PromoteStudentRequest request)
+        [Authorize(Roles = "employee")]
+        public IActionResult PromoteStudent([FromBody] PromoteStudentRequest request)
         {
             EnrollResult result = enrollmentDbService.PromoteStudent(request);
             if (result.Code == 201)

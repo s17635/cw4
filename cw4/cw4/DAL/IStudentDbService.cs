@@ -12,5 +12,9 @@ namespace cw4.DAL
         IEnumerable<Student> GetStudents();
         IEnumerable<Enrollment> GetStudentEnrollments(string idStudent);
         bool CheckIndex(string index);
+        bool CheckLoginAndPassword(string login, string password);
+        void SetRefreshToken(string login, string refToken);
+        bool CheckLoginAndRefreshToken(string login, string refToken);
+        void AddStudent(Student student);
     }
 }
