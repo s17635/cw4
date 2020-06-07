@@ -38,11 +38,6 @@ namespace cw3.Controllers
             this.Configuration = configuration;
         }
 
-        [HttpGet]
-        public IActionResult GetStudents([FromQuery] string orderBy)
-        {
-            return Ok(studentDbService.GetStudents());
-        }
 
         [HttpGet("{id}")]
         public IActionResult GetStudentEnrollments([FromRoute] string id)
@@ -57,20 +52,9 @@ namespace cw3.Controllers
             student.Salt = PasswordHasher.CreateSalt();
             student.Password = PasswordHasher.Create(student.Password, student.Salt);
             studentDbService.AddStudent(student);
-            return Ok(student); 
+            return Ok(student);
         }
 
-        [HttpPut("{id}")]
-        public IActionResult ActualizeStudent([FromRoute] int id)
-        {
-            return Ok("Aktualizacja dokończona");
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult DeleteStudent([FromRoute] int id)
-        {
-            return Ok("Usuwanie ukończone");
-        }
 
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginRequest request)
@@ -148,6 +132,24 @@ namespace cw3.Controllers
             {
                 return Unauthorized("Niepoprawny refresh token");
             }
+        }
+
+        [HttpGet]
+        public IActionResult GetStudents()
+        {
+            return Ok(studentDbService.GetStudentsEF());
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult ActualizeStudentEF([FromRoute] string id)
+        {
+            return Ok(studentDbService.ActualizeStudent(id));
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteStudentEF([FromRoute] string id)
+        {
+            return Ok(studentDbService.DeleteStudent( id));
         }
     }
 }

@@ -11,6 +11,12 @@ namespace cw4.DAL
     public class StudentDbService : IStudentDbService
     {
         private string SqlConn = "Data Source=db-mssql;Initial Catalog=s17635;Integrated Security=True";
+        private readonly s17635Context context;
+
+        public StudentDbService()
+        {
+            context = new s17635Context();
+        }
         public IEnumerable<Student> GetStudents()
         {
             var output = new List<Student>();
@@ -62,8 +68,7 @@ namespace cw4.DAL
                             IdEnrollment = int.Parse(dr["IdEnrollment"].ToString()),
                             Semester = int.Parse(dr["Semester"].ToString()),
                             IdStudy = int.Parse(dr["IdStudy"].ToString()),
-                            StartDate = DateTime.Parse(dr["StartDate"].ToString()),
-                            StudyName = dr["StudyName"].ToString()
+                            StartDate = DateTime.Parse(dr["StartDate"].ToString())
                         });
                     }
                 }
@@ -169,6 +174,27 @@ namespace cw4.DAL
                     var dr = command.ExecuteNonQuery();
                 }
             }
+        }
+        public IEnumerable<Student> GetStudentsEF()
+        {
+            var studentsList = context.Student.ToList();
+            return studentsList;
+        }
+        public Student ActualizeStudent( string id)
+        {
+            var student = context.Student.FirstOrDefault(e => e.IndexNumber == id);
+            student.FirstName = "Stanislaw";
+            context.SaveChanges();
+
+            return student;
+        }
+        public Student DeleteStudent( string id)
+        {
+            var student = context.Student.FirstOrDefault(e => e.IndexNumber == id);
+            context.Student.Remove(student);
+            context.SaveChanges();
+
+            return student;
         }
     }
 }

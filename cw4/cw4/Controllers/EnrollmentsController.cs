@@ -32,7 +32,6 @@ namespace cw3.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "employee")]
         public IActionResult EnrollStudent([FromBody] EnrollStudentRequest student)
         {
             EnrollStudentResponse response = new EnrollStudentResponse
@@ -55,7 +54,6 @@ namespace cw3.Controllers
         }
 
         [HttpPost("promotions")]
-        [Authorize(Roles = "employee")]
         public IActionResult PromoteStudent([FromBody] PromoteStudentRequest request)
         {
             EnrollResult result = enrollmentDbService.PromoteStudent(request);

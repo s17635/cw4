@@ -10,7 +10,10 @@ namespace cw4.DAL
     public interface IStudentDbService
     {
         IEnumerable<Student> GetStudents();
+        IEnumerable<Student> GetStudentsEF();
         IEnumerable<Enrollment> GetStudentEnrollments(string idStudent);
+        Student ActualizeStudent( string id);
+        Student DeleteStudent( string id);
         bool CheckIndex(string index);
         bool CheckLoginAndPassword(string login, string password);
         void SetRefreshToken(string login, string refToken);
